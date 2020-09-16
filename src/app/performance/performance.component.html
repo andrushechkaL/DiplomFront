@@ -1,0 +1,32 @@
+
+
+
+
+
+<!--<div id="quiz">-->
+<!--  <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">-->
+<!--    <div *ngFor="let question of questions">-->
+<!--      {{question.question}}-->
+<!--      <label *ngFor="let answer of question.answers">-->
+<!--        <input type="radio" name="{{question.idQuestion}}" value="{{answer.answer}}" formControlName="{{question.idQuestion}}">-->
+<!--        {{answer.answer}}-->
+<!--      </label>-->
+<!--    </div>-->
+<!--    <button type="submit">Submit Quiz</button>-->
+<!--  </form>-->
+<!--</div>-->
+<!--&lt;!&ndash;<button id="submit" (click)="onSubmit()">Submit Quiz</button>&ndash;&gt;-->
+<!--<div id="results"></div>-->
+
+
+<div  *ngIf="result.length < subjects.length">
+  <form class="performance" [formGroup]="performanceForm" (ngSubmit)="Save()">
+    <div class="performanceDiv" *ngFor="let subject of subjects">
+      {{subject.title}}
+      <input type="number" name="{{subject.subject}}" formControlName="{{subject.subject}}" required/>
+    </div>
+    <button type="submit" [disabled]="!disable">Відправити дані</button>
+  </form>
+</div>
+
+<p *ngIf="result.length === subjects.length">Successful</p>

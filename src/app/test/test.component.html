@@ -1,0 +1,35 @@
+<div class="jumbotron">
+  <h1> QUIZ</h1>
+
+
+  <button [ngClass]="status[i.quizId].status ? 'squareGreen' : 'square'" *ngFor="let i of quizList" (click)="open(i.quizId)">{{i.quizId}}</button>
+<!--  [ngClass]="status ? 'squareGreen' : 'square'"-->
+
+  <div class="form-group">
+    <ul>
+      {{question}}
+    </ul>
+  </div>
+
+
+
+  <div class="jumbotron">
+    <ul *ngFor="let opt of option">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" (click)="check($event,opt.answerId,opt.answer,questionId,specializationId,opt.insideId)">
+          {{opt.answer}}
+        </label>
+      </div>
+    </ul>
+    <button (click)="previous()" *ngIf="i>0" >previous</button>
+    <button  (click)="next()" *ngIf="i<quizLength">next</button>
+
+  </div>
+
+
+
+
+
+  <button *ngIf="answerCount==quizLength" class="btn btn-info" (click)="submit()">submit</button>
+</div>

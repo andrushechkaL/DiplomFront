@@ -1,0 +1,30 @@
+
+
+<!--https://blog.angular-university.io/angular-material-dialog/-->
+
+
+
+<div class="header">
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>Допоможемо зробити правильний вибір</h1>
+    <p>Сервіс для допомоги студентам зробити зважений вибір спеціалізації</p>
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['home']">Головна</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['test']">Тест</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['performance']">Успішність з дисциплін</a>
+        </li>
+      </ul>
+    </div>
+    <button *ngIf="user.name === null" (click)="openDialog()">Авторизуватися</button>
+    <p style="color: white" *ngIf="user.name !== null">Вітаємо, {{user.name}} {{user.surname}}</p>
+  </nav>
+</div>

@@ -1,0 +1,12 @@
+
+
+<button mat-raised-button (click)="checkRule()">Розрахувати результат</button>
+<button mat-raised-button (click)="showResult()">Показати результат</button>
+<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" style="width: 100%; display: block;">
+</highcharts-chart>
+<div class="description">
+  <p  *ngIf="displayDescription.title !== 'IASA'">По результатам розрахунку моделі було з'ясовано,
+    що Вам краще підійде спеціалізація - <b>{{displayDescription.name}}</b></p>
+  <p >{{displayDescription.description}}</p>
+</div>
+
